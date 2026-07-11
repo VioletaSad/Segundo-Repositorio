@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Laura Anderson</title>
+    </head>
+    <body>
+        <header>
+            <a href="index">Inicio</a>
+            <a href="segunda-pagina">Tecnología, narrativa y experimentación</a>
+            <a href="tercera-pagina">Trayectoria y proyección internacional</a>
+        </header>
+        <h1>Laura Anderson</h1>
+        <h2>El lenguaje como materia artística</h2>
+            <p>El lenguaje ocupa un lugar central en la obra de Laurie Anderson. Sus piezas exploran cómo las palabras construyen significado y cómo pueden ser transformadas mediante la repetición, la fragmentación y el uso de tecnología.</p>
+            <p>A través de estas estrategias, el lenguaje deja de ser únicamente un medio de comunicación para convertirse en un material artístico. Sus obras revelan las tensiones entre lo que se dice, lo que se escucha y lo que se interpreta.</p>
+            <img src="../segundo-repositorio/anderson-1.jpg" alt="Laura Anderson">
+    </body>
+</html>
