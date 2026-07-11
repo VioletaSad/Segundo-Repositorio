@@ -16,6 +16,21 @@
                     <p>Sus obras suelen desarrollarse como narraciones fragmentadas, donde la voz guía al espectador a través de historias que mezclan lo personal, lo político y lo ficticio. Este enfoque permite explorar nuevas formas de contar, donde la estructura no es lineal y la interpretación queda abierta.</p>
                 </article>
             </section>
+        <h2>Obras</h2>
+        <ul>
+            <li><img src="../segundo-repositorio/osuperman.jpg" alt="O Superman">O Superman</li>
+            <li><img src="../segundo-repositorio/bigscience.jpg" alt="Big Science">Big Science</li>
+            <li><img src="../segundo-repositorio/united-states.jpg" alt="United States Live">United States Live</li>
+        </ul>
+        <h2>Conceptos</h2>
+        <ul>
+            <li>Lenguaje y narrativa</li>
+            <li>Performance multimedia</li>
+            <li>Manipulación de la voz</li>
+        </ul>
 
-            
-
+        <footer>
+            <p>Para contactarse escribir a <a href="mailto:laurie@artedigital.com">laurie@artedigital.com</a></p>
+        </footer>
+    </body>
+</html>
