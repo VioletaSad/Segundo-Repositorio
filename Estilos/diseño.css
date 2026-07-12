@@ -13,6 +13,7 @@ body {
   background-position: center;  
 }
 
+
 header {
   display: flex;
   justify-content: center;
@@ -109,7 +110,7 @@ footer a {
 
 /* --- PÁRRAFOS --- */
 .parrafo {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   max-width: 800px;
   margin: 1rem auto;
@@ -245,6 +246,36 @@ button:disabled {
   transform: scale(1.05);
 }
 
+/* --- EPIGRAFE --- */
+.imagen-principal {
+  display: block;
+  margin: 1.5rem auto;   /* centra la imagen */
+  width: 500px;          /* agranda el ancho */
+  max-width: 90%;        /* se adapta en pantallas chicas */
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
 
+.epigrafe {
+  font-family: 'Abel', sans-serif;
+  font-size: 1rem;       /* un poquito más grande */
+  color: #555;
+  text-align: center;    /* centrado debajo de la imagen */
+  font-style: italic;
+  margin-top: 0.5rem;
+  background-color: rgba(255,255,255,0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: block;        /* ocupa toda la línea */
+  max-width: 500px;      /* mismo ancho que la imagen */
+  margin-left: auto;
+  margin-right: auto;    /* centra el rectángulo */
+}
 
-
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255,255,255,0.4); /* capa clara encima del fondo */
+  z-index: -1; /* queda detrás del contenido */
+}
