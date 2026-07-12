@@ -1,5 +1,5 @@
 // galeria.js
-console.log("✅ Archivo galeria.js cargado correctamente");
+console.log(" Archivo galeria.js cargado correctamente");
 
 const obras = [
   { nombre: "O Superman", año: 1981, imagen: "../imagenes/osuperman.jpg", duracion: 8, peso: 12 },
@@ -30,6 +30,7 @@ function mostrarGaleria(arrayObras = obras) {
     img.alt = obra.nombre;
 
     const p = document.createElement("p");
+    p.classList.add("titulo-obra");
     p.textContent = `${obra.nombre} (${obra.año})`;
 
     item.appendChild(img);
@@ -63,11 +64,13 @@ function calcularRepositorio() {
   const presupuestoAnual = pesoTotal * costoMensual * 12;
 
   const salida = `
-    <p>Duración total de las obras: ${duracionTotal} minutos</p>
-    <p>Duración promedio: ${duracionPromedio.toFixed(2)} minutos</p>
-    <p>Obra más larga: ${obraMayor.nombre} (${obraMayor.duracion} min)</p>
-    <p>Tiempo de transferencia: ${tiempoDescarga} ms</p>
-    <p>Presupuesto anual: $${presupuestoAnual.toFixed(2)}</p>
+    <div class="resultado-box">
+      <p class="resultado-texto">Duración total de las obras: ${duracionTotal} minutos</p>
+      <p class="resultado-texto">Duración promedio: ${duracionPromedio.toFixed(2)} minutos</p>
+      <p class="resultado-texto">Obra más larga: ${obraMayor.nombre} (${obraMayor.duracion} min)</p>
+      <p class="resultado-texto">Tiempo de transferencia: ${tiempoDescarga} ms</p>
+      <p class="resultado-texto">Presupuesto anual: $${presupuestoAnual.toFixed(2)}</p>
+    </div>
   `;
   document.getElementById("resultados").innerHTML = salida;
 
@@ -85,3 +88,24 @@ function reiniciar() {
 window.onload = () => {
   mostrarGaleria(obras);
 };
+
+// --- DATO CURIOSO ---
+
+const datosCuriosos = [
+  "Laurie Anderson fue la primera artista residente de la NASA.",
+  "Su obra 'O Superman' alcanzó el número 2 en las listas británicas en 1981.",
+  "Ha trabajado con tecnologías experimentales como el violín parlante.",
+  "Es pionera en el uso de multimedia en performance artística."
+];
+
+function mostrarDato() {
+  const contenedor = document.getElementById("dato");
+  const randomIndex = Math.floor(Math.random() * datosCuriosos.length);
+  contenedor.textContent = datosCuriosos[randomIndex];
+}
+
+window.addEventListener("load", () => {
+  // Mostrar uno al inicio
+  mostrarDato();
+
+  const contenedor = document.getElementById("dato");

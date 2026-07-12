@@ -176,4 +176,75 @@ ul li img {
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+.titulo-obra {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: #0044ff;
+  text-align: center;
+  margin-top: 0.5rem;
+  text-shadow:
+    -2px -2px 2px #fff,
+     2px -2px 2px #fff,
+    -2px  2px 2px #fff,
+     2px  2px 2px #fff;
+}
+
+/* --- BOTONES --- */
+button {
+  background-color: #0044ff;   
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  font-family: 'Abel', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #002bb8;   
+  transform: scale(1.05);      
+}
+
+button:disabled {
+  background-color: #ccc;      
+  cursor: not-allowed;
+}
+
+/*---DATOS---*/
+
+#dato {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: #111;
+
+  width: 80%;
+  min-height: 150px;
+  margin: 2rem auto;
+  padding: 2rem;
+
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#dato:hover {
+  transform: scale(1.05);
+}
+
+
+
 
