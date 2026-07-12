@@ -1,5 +1,5 @@
 // galeria.js
-console.log(" Archivo galeria.js cargado correctamente");
+console.log("Archivo galeria.js cargado correctamente");
 
 const obras = [
   { nombre: "O Superman", año: 1981, imagen: "../imagenes/osuperman.jpg", duracion: 8, peso: 12 },
@@ -20,6 +20,7 @@ function mezclarArray(array) {
 
 function mostrarGaleria(arrayObras = obras) {
   const contenedor = document.getElementById("galeria");
+  if (!contenedor) return; // protección: si no existe, no rompe
   contenedor.innerHTML = "";
 
   arrayObras.forEach(obra => {
@@ -72,25 +73,24 @@ function calcularRepositorio() {
       <p class="resultado-texto">Presupuesto anual: $${presupuestoAnual.toFixed(2)}</p>
     </div>
   `;
-  document.getElementById("resultados").innerHTML = salida;
+  const resultados = document.getElementById("resultados");
+  if (resultados) resultados.innerHTML = salida;
 
-  // habilitar botón reinicio
-  document.getElementById("btnReiniciar").disabled = false;
+  const btn = document.getElementById("btnReiniciar");
+  if (btn) btn.disabled = false;
 }
 
 function reiniciar() {
-  document.getElementById("resultados").innerHTML = "";
-  document.getElementById("btnReiniciar").disabled = true;
-  mostrarGaleria(obras); // vuelve a mostrar la galería original
+  const resultados = document.getElementById("resultados");
+  if (resultados) resultados.innerHTML = "";
+
+  const btn = document.getElementById("btnReiniciar");
+  if (btn) btn.disabled = true;
+
+  mostrarGaleria(obras);
 }
 
-// --- Ejecutar al cargar ---
-window.onload = () => {
-  mostrarGaleria(obras);
-};
-
 // --- DATO CURIOSO ---
-
 const datosCuriosos = [
   "Laurie Anderson fue la primera artista residente de la NASA.",
   "Su obra 'O Superman' alcanzó el número 2 en las listas británicas en 1981.",
@@ -100,12 +100,38 @@ const datosCuriosos = [
 
 function mostrarDato() {
   const contenedor = document.getElementById("dato");
+  if (!contenedor) return; // protección
   const randomIndex = Math.floor(Math.random() * datosCuriosos.length);
   contenedor.textContent = datosCuriosos[randomIndex];
 }
 
+// --- Ejecutar al cargar ---
 window.addEventListener("load", () => {
-  // Mostrar uno al inicio
-  mostrarDato();
+  // Galería (segunda página)
+  mostrarGaleria(obras);
 
-  const contenedor = document.getElementById("dato");
+  // Botón de calcular datos (segunda página)
+  const btnCalcular = document.querySelector("button[onclick='calcularRepositorio()']");
+  if (btnCalcular) {
+    btnCalcular.addEventListener("click", calcularRepositorio);
+  }
+
+  // Botón de reinicio (segunda página)
+  const btnReiniciar = document.getElementById("btnReiniciar");
+  if (btnReiniciar) {
+    btnReiniciar.addEventListener("click", reiniciar);
+  }
+
+  // Dato curioso (tercera página)
+  const contenedorDato = document.getElementById("dato");
+  if (contenedorDato) {
+    mostrarDato();
+    contenedorDato.addEventListener("mouseenter", mostrarDato);
+
+    const btnDato = document.querySelector("button[onclick='mostrarDato()']");
+    if (btnDato) {
+      btnDato.addEventListener("click", mostrarDato);
+    }
+  }
+});
+

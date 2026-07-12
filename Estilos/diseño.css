@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
-/* --- ESTILO GENERAL --- */
+/* --- ESTILO GENERAL DE TODAS LAS PAGINAS --- */
 body {
   margin: 20px;
   padding: 10px;
@@ -125,14 +125,14 @@ footer a {
 /** --- ARTICULOS--- */
 section {
   display: flex;
-  gap: 2rem;              /* espacio entre columnas */
+  gap: 2rem;            
   max-width: 1200px;
   margin: 2rem auto;
 }
 
 section article {
-  flex: 1;                /* cada artículo ocupa la mitad */
-  background-color: rgba(255, 255, 255, 0.85); /* opcional: fondo blanco translúcido */
+  flex: 1;               
+  background-color: rgba(255, 255, 255, 0.85); 
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -141,22 +141,22 @@ section article {
 /* --- LISTAS --- */
 ul {
   display: flex;
-  flex-wrap: wrap;      /* permite que se acomoden en varias filas */
-  gap: 1.5rem;          /* espacio entre columnas */
-  list-style: none;     /* quita los puntos de la lista */
+  flex-wrap: wrap;  
+  gap: 1.5rem;        
+  list-style: none;    
   padding: 0;
   justify-content: center;
 }
 
 ul li {
-  flex: 1 1 200px;      /* cada ítem ocupa mínimo 200px */
+  flex: 1 1 200px;   
   text-align: center;
 }
 
 ul li img {
-  width: 200px;         /* todas las imágenes mismo ancho */
-  height: 200px;        /* todas misma altura */
-  object-fit: cover;    /* recorta sin deformar */
+  width: 200px;      
+  height: 200px;       
+  object-fit: cover;   
   border-radius: 8px;
   display: block;
   margin: 0 auto 0.5rem auto;
@@ -164,15 +164,15 @@ ul li img {
 
 #galeria {
   display: flex;
-  flex-wrap: wrap;      /* permite varias filas */
-  gap: 1.5rem;          /* espacio entre imágenes */
+  flex-wrap: wrap;     
+  gap: 1.5rem;        
   justify-content: center;
 }
 
 #galeria img {
-  width: 200px;         /* todas las imágenes mismo ancho */
-  height: 200px;        /* todas misma altura */
-  object-fit: cover;    /* recorta sin deformar */
+  width: 200px;        
+  height: 200px;      
+  object-fit: cover;   
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
 }
@@ -249,33 +249,33 @@ button:disabled {
 /* --- EPIGRAFE --- */
 .imagen-principal {
   display: block;
-  margin: 1.5rem auto;   /* centra la imagen */
-  width: 500px;          /* agranda el ancho */
-  max-width: 90%;        /* se adapta en pantallas chicas */
+  margin: 1.5rem auto;   
+  width: 500px;          
+  max-width: 90%;        
   border-radius: 8px;
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
 }
 
 .epigrafe {
   font-family: 'Abel', sans-serif;
-  font-size: 1rem;       /* un poquito más grande */
+  font-size: 1rem;       
   color: #555;
-  text-align: center;    /* centrado debajo de la imagen */
+  text-align: center;    
   font-style: italic;
   margin-top: 0.5rem;
   background-color: rgba(255,255,255,0.7);
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  display: block;        /* ocupa toda la línea */
-  max-width: 500px;      /* mismo ancho que la imagen */
+  display: block;       
+  max-width: 500px;      
   margin-left: auto;
-  margin-right: auto;    /* centra el rectángulo */
+  margin-right: auto;    
 }
 
 body::before {
   content: "";
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(255,255,255,0.4); /* capa clara encima del fondo */
-  z-index: -1; /* queda detrás del contenido */
+  background-color: rgba(255,255,255,0.4);
+  z-index: -1; 
 }
