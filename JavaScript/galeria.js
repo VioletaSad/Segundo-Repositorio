@@ -20,7 +20,7 @@ function mezclarArray(array) {
 
 function mostrarGaleria(arrayObras = obras) {
   const contenedor = document.getElementById("galeria");
-  if (!contenedor) return; // protección: si no existe, no rompe
+  if (!contenedor) return; 
   contenedor.innerHTML = "";
 
   arrayObras.forEach(obra => {
@@ -39,18 +39,24 @@ function mostrarGaleria(arrayObras = obras) {
     contenedor.appendChild(item);
   });
 }
+// --- BOTON DE INTERACCIÓN PARA CAMBIAR ESTILO ---
+let ultimoPrimero = null;
 
 function cambiarEstilo() {
   let obrasMezcladas;
   do {
     obrasMezcladas = mezclarArray([...obras]);
-  } while (JSON.stringify(obrasMezcladas) === JSON.stringify(ultimoOrden));
+  } while (obrasMezcladas[0].nombre === ultimoPrimero);
 
-  ultimoOrden = obrasMezcladas;
+  // Guardar el nuevo primer elemento
+  ultimoPrimero = obrasMezcladas[0].nombre;
+
+  // Mostrar la galería con el nuevo orden
   mostrarGaleria(obrasMezcladas);
 }
 
-// --- EJERCICIO DEL REPOSITORIO ---
+
+// --- CALCULO DE DATOS DE LAS OBRAS ---
 const tiempoTransferencia = 50; // ms por MB
 const costoMensual = 2;         // $ por MB
 
@@ -73,13 +79,14 @@ function calcularRepositorio() {
       <p class="resultado-texto">Presupuesto anual: $${presupuestoAnual.toFixed(2)}</p>
     </div>
   `;
+  //---Mostrar resultados en la página BOTON---
   const resultados = document.getElementById("resultados");
   if (resultados) resultados.innerHTML = salida;
 
   const btn = document.getElementById("btnReiniciar");
   if (btn) btn.disabled = false;
 }
-
+// --- BOTON DE REINICIO ---
 function reiniciar() {
   const resultados = document.getElementById("resultados");
   if (resultados) resultados.innerHTML = "";
